@@ -1,6 +1,6 @@
 // global variables
 const values = ['Rock', 'Paper', 'Scissor'];
-//function generating ROCK/PAPER/SCISSOR randomly
+//function generating ROCK/PAPER/SCISSOR randomly for computer
 function computerSelection (){
     const random = Math.floor(Math.random()*3);
     const compValue = values[random].toLowerCase();
@@ -44,7 +44,7 @@ function playerSelection(){
         return 'comp';
     } 
  }
- // rounds to be played
+ // the game played by default 5 rounds 
  function playRound(){
      const rounds = 5;
      let compScore = 0;
@@ -67,3 +67,4 @@ function playerSelection(){
      }
      console.log(`the final score computer:${compScore} and player: ${playerScore}` )
  }
+ playRound();
