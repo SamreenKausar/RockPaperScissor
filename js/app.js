@@ -1,53 +1,69 @@
-// console.log("hello World");
 // global variables
 const values = ['Rock', 'Paper', 'Scissor'];
 //function generating ROCK/PAPER/SCISSOR randomly
 function computerSelection (){
     const random = Math.floor(Math.random()*3);
-    const compValue = values[random];
+    const compValue = values[random].toLowerCase();
     return compValue ;
 }
 // function selecting players input
 function playerSelection(){
-    const playerValue = prompt("Please Select option[Rock/Paper/Scissor");
+    let playerValue = prompt("Please Select option[Rock/Paper/Scissor]").toLowerCase();
+    if(playerValue==='rock'|| playerValue === 'paper'|| playerValue === 'scissor')
     return playerValue;
+    else {
+    playerValue = prompt('Please enter valid value').toLowerCase();
+    return playerValue;
+    }
 }
 //winner Selection
  function Gameplay(){
-     const playerSelect = playerSelection().toLowerCase();
-     const compSelect = computerSelection().toLowerCase();
+     const playerSelect = playerSelection();
+     const compSelect = computerSelection();
      console.log( "Player selected :",playerSelect);
      console.log("Computer Selected :", compSelect);
      if(playerSelect===compSelect){
-        console.log("Its a tie");
+        return 'both';
      }
      else if(playerSelect==='rock'){
             if(compSelect==='paper')
-            console.log("You lose! Paper beaats Rock");
+            return 'comp';
             else if(compSelect==='scissor')
-            console.log('You WIn! Rock beats Scissor');
+            return 'player';
         }
     else if(playerSelect==='paper'){
         if(compSelect==='rock')
-        console.log('You Win ! Paper beaats Rock');
+        return 'player';
         else if(compSelect==='scissor')
-        console.log("You lose! Scissor beaats paper");
+        return 'comp';
         }
     else if(playerSelect==='scissor'){
         if(compSelect==='paper')
-        console.log('You win! Scissor beats Paper');
+        return 'player';
         else if(compSelect==='rock')
-        console.log('You lose! Rock beats scissor');
+        return 'comp';
     } 
  }
  // rounds to be played
  function playRound(){
      const rounds = 5;
-     const compScore=0;
-     const playerScore=0;
+     let compScore = 0;
+     let playerScore =0;
      console.log('Best of five game');
      for(i=0; i<rounds; i++){
-        Gameplay();
+        let result;
+        result = Gameplay();
+        if(result==='both'){
+        compScore++;
+        playerScore++;
+        console.log('the winner:',result);
+       } else if(result === 'comp'){
+        compScore++;
+        console.log('the winner:',result);
+       } else if(result === 'player'){
+        playerScore++;
+        console.log('the winner:',result);
+       }
      }
-
+     console.log(`the final score computer:${compScore} and player: ${playerScore}` )
  }
