@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js"></script>
+    <script src="js/app.js" defer></script>
     <title>Rock Paper Scissor Game</title>
 
 </head>
@@ -15,20 +15,21 @@
         <div class="players">
             <div class="comp">
                 <h1>Computer</h1>
-                <p class="score">Score:</p>
-                <img id="compPlay" src="images/rock.png">
+                <p >Score: <span id="compScoreId"></span></p>
+                <img id="compSelect" src="">
             </div>
             <div class="player">
                 <h1>Player</h1>
-                <p class="score">Score:</p>
-                <img src="images/rock.png" alt="rock/paper/Scissor">
-               <div class="buttons">
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissor</button>
-               </div>
+                <p>Score: <span id="playerScoreId"></span></p>
+                <img id="playerSelect" src="" alt="rock/paper/Scissor">
             </div>
         </div>
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissor">Scissor</button>
+        </div>
+        <button id="reset">Reset</button>
         
     </div>
     
