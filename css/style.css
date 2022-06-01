@@ -8,13 +8,19 @@ html, body {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     color: aqua;
+    background-color: black;
 }
 
 .container{
-    padding: 20px;
+    padding: 50px;
+    margin: 50px auto;
+    background-color: #07202d;
+    border: 5px solid #1c3b4d;
+    border-radius: 20px;
+    box-shadow: inset;
+    width: 600px;
+    height: 700px;
     display: flex;
-    background-color: black;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
